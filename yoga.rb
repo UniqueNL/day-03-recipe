@@ -16,8 +16,18 @@ def intro_customer
   puts "------------- WELCOME IN THE " + COMPANY_NAME.upcase + " --------------"
   puts "Here's a list of all the items we sell:"
   @products.each do |item|
-   puts "#{item[:name]} with the price of #{item[:price]}"
+   puts "#{item[:reference_number]}) * #{item[:name]}: #{item[:price]},-"
   end
 end
 
+def product_selection
+  puts "== WHAT DO YOU WANT TO BUY? FILL IN THE REFERENCE NUMBER. =="
+  print "Reference number: "
+  shopping_cart = []
+  shopping_cart << gets.chomp
+  print shopping_cart
+end
+
+
 intro_customer
+product_selection
