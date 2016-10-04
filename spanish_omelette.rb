@@ -22,8 +22,26 @@ ingredients = [
 puts "------------- LETS MAKE A SPANISH OMELETTE! ------------"
 print_divider
 
-  puts "You need the following ingredients:"
+puts "You need the following ingredients:"
 
-  ingredients.each do |ingredient|
-    puts "- #{ingredient[:quantity]} of #{ingredient[:name]}"
+ingredients.each do |ingredient|
+  puts "- #{ingredient[:quantity]} of #{ingredient[:name]}"
+end
+
+loop do
+  puts "\n"
+  print_divider
+
+  puts "Got all ingredients you need? (Y/N)"
+  answer = gets.chomp.upcase
+
+  if answer == 'N'
+    puts "You need to go shopping"
+    print_progress_bar
+  elsif answer == 'Y'
+    puts "Let's start cooking!"
+    break
+  else
+    puts "That's not a valid input. Try again."
   end
+end
